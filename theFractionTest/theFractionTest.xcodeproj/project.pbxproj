@@ -10,6 +10,7 @@
 		1295A80C1563DA6100A75E16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1295A80B1563DA6100A75E16 /* Foundation.framework */; };
 		1295A80F1563DA6100A75E16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1295A80E1563DA6100A75E16 /* main.m */; };
 		1295A8131563DA6100A75E16 /* theFractionTest.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1295A8121563DA6100A75E16 /* theFractionTest.1 */; };
+		1295A82C1563DE1F00A75E16 /* Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1295A82B1563DE1F00A75E16 /* Fraction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,8 +30,10 @@
 		1295A8071563DA6100A75E16 /* theFractionTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = theFractionTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1295A80B1563DA6100A75E16 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1295A80E1563DA6100A75E16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1295A8111563DA6100A75E16 /* theFractionTest-Prefix.pch */ = {isa = PBXFileReference; path = "theFractionTest-Prefix.pch"; sourceTree = "<group>"; };
+		1295A8111563DA6100A75E16 /* theFractionTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "theFractionTest-Prefix.pch"; sourceTree = "<group>"; };
 		1295A8121563DA6100A75E16 /* theFractionTest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = theFractionTest.1; sourceTree = "<group>"; };
+		1295A82A1563DE1F00A75E16 /* Fraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fraction.h; sourceTree = "<group>"; };
+		1295A82B1563DE1F00A75E16 /* Fraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fraction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				1295A80E1563DA6100A75E16 /* main.m */,
+				1295A82A1563DE1F00A75E16 /* Fraction.h */,
+				1295A82B1563DE1F00A75E16 /* Fraction.m */,
 				1295A8121563DA6100A75E16 /* theFractionTest.1 */,
 				1295A8101563DA6100A75E16 /* Supporting Files */,
 			);
@@ -139,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1295A80F1563DA6100A75E16 /* main.m in Sources */,
+				1295A82C1563DE1F00A75E16 /* Fraction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +235,7 @@
 				1295A8181563DA6100A75E16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
