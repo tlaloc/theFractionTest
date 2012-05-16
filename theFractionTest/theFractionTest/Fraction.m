@@ -75,8 +75,8 @@
 	}
 	if (denominator < 0) {
 		denominator *= -1;
-		if (isNeg == YES) isNeg = NO;
-		else if (isNeg == NO) isNeg = YES;
+		if (isNeg) isNeg = NO;
+		else if (! isNeg) isNeg = YES;
 		//	NSLog (@"\nden: %i  isNeg: %i", denominator, isNeg);
 	}
 	
@@ -93,7 +93,7 @@
 	}
 	//NSLog (@"\nwhile:  num: %i  den:  %i   isNeg: %i", numerator, denominator, isNeg);
 	//NSLog (@"\nu: %i  v:  %i", u,v);
-	if (isNeg == YES)
+	if (isNeg)
 		numerator *= -1;
 	numerator /= u;
 	denominator /= u; 

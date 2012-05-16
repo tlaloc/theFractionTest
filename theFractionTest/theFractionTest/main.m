@@ -78,7 +78,7 @@ int main (int argc, char * argv[]) {
 		[cFraction print: NO];
 		
 		[aFraction print: YES]; 
-		NSLog (@"  reduced!"); 
+		NSLog (@" reduced!"); 
 		[bFraction print: YES]; 
 		NSLog (@" reduced!");
 		
