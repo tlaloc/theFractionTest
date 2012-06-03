@@ -49,8 +49,13 @@ int main (int argc, char * argv[]) {
 	
 	@autoreleasepool {
 		
+		typedef Fraction *FractionObj;
+		
 		NSLog (@"Fractions allocated: %i", [Fraction count]);
 			   
+		FractionObj f1 = [[Fraction allocF] init],
+					f2 = [[Fraction allocF] init];
+		
 		Fraction *aFraction = [[Fraction allocF] init]; 
 		Fraction *bFraction = [[Fraction allocF] init];
 		
