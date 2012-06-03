@@ -8,11 +8,26 @@
 
 #import "Fraction.h"
 
+static int gCounter, gAddCount;
+
 @implementation Fraction 
 
 @synthesize numerator, denominator;
 
--(void) print: (BOOL) simplify; 
++(Fraction *) allocF 
+{
+	extern int gCounter;	// "extern" not necessary here
+	++gCounter;	
+	return [Fraction alloc];
+}
+
++(int) count
+{
+	extern int gCounter;	// "extern" not necessary here
+	return gCounter; 
+}
+
+-(void) print: (BOOL) simplify 
 {
 	int wholeNum = 0;
 	
@@ -54,7 +69,7 @@
 		return NAN;
 }
 
--(void) setTo: (int) n over: (int) d;
+-(void) setTo: (int) n over: (int) d
 {
 	numerator = n;
 	denominator = d;
@@ -96,8 +111,7 @@
 	if (isNeg == YES)
 		numerator *= -1;
 	numerator /= u;
-	denominator /= u; 
-	
+	denominator /= u; 	
 }
 
 // Add a fraction to the receiver
@@ -105,15 +119,27 @@
 {
 	// To add two fractions:
 	// a/b + c/d = ((a*d) + (b*c)) / (b * d)
-	
 	// result will store the result of the addition 
+	// gAddCount counts number of adds
+	
+	extern int gAddCount; 
+	
 	Fraction *result = [[Fraction alloc] init];
 	
 	result.numerator = numerator * f.denominator + denominator * f.numerator;
 	result.denominator = denominator * f.denominator;
 	
+	++gAddCount;
+	
 	//[result reduce];
 	return result;
+}
+
+// Returns the Add count
++(int) addCount
+{
+	extern int gAddCount;
+	return gAddCount;
 }
 
 // Subtract argument from receiver

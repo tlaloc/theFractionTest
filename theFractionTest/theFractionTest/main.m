@@ -43,16 +43,20 @@
  */
 
 #import "Fraction.h"
+#import "Complex.h"
 
 int main (int argc, char * argv[]) {
 	
 	@autoreleasepool {
 		
-		Fraction *aFraction = [[Fraction alloc] init]; 
-		Fraction *bFraction = [[Fraction alloc] init];
+		NSLog (@"Fractions allocated: %i", [Fraction count]);
+			   
+		Fraction *aFraction = [[Fraction allocF] init]; 
+		Fraction *bFraction = [[Fraction allocF] init];
 		
 		Fraction *cFraction;
 		
+		NSLog (@"Fractions allocated: %i", [Fraction count]);
 		// Set two fractions to 1/4 and 1/2 and add them together
 		
 		[aFraction setTo: -5 over: 2]; 
@@ -68,6 +72,8 @@ int main (int argc, char * argv[]) {
 		cFraction = [aFraction add: bFraction];
 		[cFraction print: NO]; 
 		
+		NSLog (@"Fractions allocated: %i", [Fraction count]);
+		
 		cFraction = [aFraction subtract: bFraction];
 		[cFraction print: NO];
 		
@@ -77,10 +83,32 @@ int main (int argc, char * argv[]) {
 		cFraction = [aFraction divide: bFraction];
 		[cFraction print: NO];
 		
+		cFraction = [aFraction add: bFraction];
+		[cFraction print: NO];
+		
+		NSLog (@"\ngAddCount: %i", [Fraction addCount]);
+		
 		[aFraction print: YES]; 
 		NSLog (@"  reduced!"); 
 		[bFraction print: YES]; 
 		NSLog (@" reduced!");
+		
+		Complex *aComplex = [[Complex alloc] init];
+		
+		[aComplex setReal: 7.5 andImaginary: -2.5];
+		//		[[aComplex reduce];		// bad
+		[aComplex print];
+		
+		id data1;
+		data1 = aComplex; 
+		[data1 print];
+		id data2;
+		data2 = bFraction;
+		[data2 print: NO];
+		//		id result;
+		//		result = [data1 add: data2];	// bad
+		//		[result print];
+		
 		
 	}
 	return 0; 
